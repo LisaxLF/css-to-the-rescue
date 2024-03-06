@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4em;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        gap: 1em;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(234, 220, 247);
+    flex-direction: column;
+}
+
+main>article:first-child {
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+main>div:first-of-type {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+main>div:first-of-type>div:first-of-type {
+    background: linear-gradient(0deg,
+            #e7611400 10%,
+            #E76014 100%);
+    position: absolute;
+    height: 6em;
+    width: 10px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-radius: 25%;
+    /* animation: 4s firework_start infinite ease-out; */
+}
+
+main>div:first-of-type>div:first-of-type::after {
+    content: '';
+    position: absolute;
+    width: 25vmin;
+    height: 25vmin;
+    bottom: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 25%;
+    background: repeating-conic-gradient(#e76114 0deg 10deg,
+            transparent 0deg 20deg);
+}
+
+/* keyframes for the animation */
+@keyframes firework_start {
+    0% {
+        bottom: 0%;
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 75%;
+        opacity: 0;
+    }
+}
+
+
+/* Working on the exploding part */
+main>div:first-of-type>div:nth-of-type(2) {}
+
+
+main {
+    background-color: #dfdfdf;
+    color: #242424;
+
+    div:first-of-type {
+        background-color: #242424;
+
+        div:nth-of-type(2) {
+            position: absolute;
+            width: 18em;
+            height: 18em;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image:
+                repeating-conic-gradient(
+                    #E76014 0 2deg,
+                    #242424 0 12deg
+                );
+
+            div:first-of-type {
+                position: absolute;
+                width: 40%;
+                height: 40%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                background-color: #242424;
+            }
+
+            div:first-of-type::before {
+                content: "";
+                width: 40%;
+                height: 40%;
+                border-radius: 50%;
+                background-color: #242424;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border: white dotted 2px;
+            }
+
+            div:first-of-type::after {
+                content: '';
+                position: absolute;
+                width: 70%;
+                height: 70%;
+                top: 50%;
+                left: 50%;
+                stroke-linecap: round;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                border: white dotted 4px;
+            }
+
+
+        }
+
+        div:nth-of-type(2)::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: white dotted 3px;
+        }
+    }
+}
