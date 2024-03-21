@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/new.css">
     <title>Firework show</title>
@@ -11,48 +14,227 @@
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <!-- firework options -->
-                <li><a href="">Color</a></li>
-                <li><a href="">Size</a></li>
-                <li><a href="">Shape</a></li>
-                <li><a href="">Sound</a></li>
-            </ul>
-        </nav>
+        <h1>Firework show</h1>
+        <p>customize your own firework</p>
+        <div>
+            <label for="customize">customize</label>
+            <input data-customize name="firworkshow" type="radio" id="customize">
+        </div>
     </header>
     <main>
         <!-- introduction -->
-        <article>
-            <h1>Firework show</h1>
-            <p>customize your own firework</p>
-        </article>
         <!-- firework customizing -->
         <article>
+            <!--  inner ring  -->
             <section>
-                <!-- first part -->
-                <section>
-                    <div></div>
-                </section>
-                <!-- first boom -->
-                <section>
-                    <!-- wrapper -->
-                    <section>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </section>
-                </section>
-                <!-- second boom -->
-                <section></section>
+                <div></div>
+            </section>
+            <!--  inner boom  -->
+            <section>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+            <!--  outer boom  -->
+            <section>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </section>
         </article>
     </main>
+    <footer>
+        <!-- nu mijn customizing tab -->
+        <!-- voor inner ring -->
+        <section>
+            <div data-customizeMenu>
+                <section>
+                    <!-- <label for="options">Selecteer het gedeelte:</label> -->
+                    <label>
+                        <input type="radio" name="gedeelte" value="innerring">
+                        <span>innerRing</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="gedeelte" value="innerboom">
+                        <span>innerboom</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="gedeelte" value="outerboom">
+                        <span>outerboom</span>
+                    </label>
+                </section>
+                <!-- als value innerRing -->
+                <fieldset data-innerring>
+                    <div>
+                        <div>
+                            <p>Kleur ring:</p>
+                            <div>
+                                <label for="pink-innerring">pink</label>
+                                <input type="radio" id="pink-innerring" name="Kleur" value="hotpink-innerring">
+                            </div>
+                            <div>
+                                <label for="purple-innerring">purple</label>
+                                <input type="radio" id="purple-innerring" name="Kleur" value="rebeccapurple-innerring">
+                            </div>
+                            <div>
+                                <label for="blue-innerring">blue</label>
+                                <input type="radio" id="blue-innerring" name="Kleur" value="dodgerblue-innerring">
+                            </div>
+                            <div>
+                                <label for="orange-innerring">orange</label>
+                                <input type="radio" id="orange-innerring" name="Kleur" value="orange-innerring">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="grote-innerring">Bigness ring:</label>
+                            <input type="range" id="grote-innerring" name="grote-innerring" min="1" max="75" value="50">
+                        </div>
+                        <div>
+                            <label for="Dikte-innerring">Thickness ring:</label>
+                            <input type="range" id="grote-innerring" name="Dikte-innerring" min="1" max="10" value="8"                               value="100">
+                        </div>
+                        <div>
+                            <label for="BorderStyle-innerring">Solid</label>
+                            <input type="radio" id="BorderStyle-innerring" name="BorderStyle-innerring"
+                                value="innerring-Border-style">
+                            <label for="BorderStyle-innerring">Dotted</label>
+                            <input type="radio" id="BorderStyle-innerring" name="BorderStyle-innerring"
+                                value="innerring-Border-style-dotted">
+                            <label for="BorderStyle-innerring">Dashed</label>
+                            <input type="radio" id="BorderStyle-innerring" name="BorderStyle-innerring"
+                                value="innerring-Border-style-dashed">
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- als value innerboom is -->
+                <fieldset data-innerboom>
+                    <div>
+                        <div>
+                            <p>Color beams:</p>
+                            <div>
+                                <label for="pink-innerboom">pink</label>
+                                <input type="radio" id="pink-innerboom" name="Kleur-innerboom" value="hotpink-innerboom">
+                            </div>
+                            <div>
+                                <label for="purple-innerboom">purple</label>
+                                <input type="radio" id="purple-innerboom" name="Kleur-innerboom" value="rebeccapurple-innerboom">
+                            </div>
+                            <div>
+                                <label for="blue-innerboom">blue</label>
+                                <input type="radio" id="blue-innerboom" name="Kleur-innerboom" value="dodgerblue-innerboom">
+                            </div>
+                            <div>
+                                <label for="orange-innerboom">orange</label>
+                                <input type="radio" id="orange-innerboom" name="Kleur-innerboom" value="orange-innerboom">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="grote-innerboom">Bigness beams:</label>
+                            <input type="range" id="grote-innerboom" name="grote-innerboom" min="10" max="200"
+                                value="100">
+                        </div>
+                        <div>
+                            <label for="Dikte-innerboom">Thickness beams:</label>
+                            <input type="range" id="Dikte-innerboom" name="Dikte-innerboom" min="2" max="20" value="8">
+                        </div>
+                        <div>
+                            <label for="Vert-innerboome">Start from center:</label>
+                            <input type="range" id="Verte-innerboom" name="Verte-innerboom" min="40" max="100"
+                                value="40">
+                        </div>
+                        <div>
+                            <p>animatie style:</p>
+                            <div>
+                                <label for="animatie-innerboom">None</label>
+                                <input type="radio" id="animatie-innerboom" name="animatie-innerboom"
+                                    value="innerboom-animatie-none">
+                                <label for="animatieGlow-innerboom">Glow</label>
+                                <input type="radio" id="animatieGlow-innerboom" name="animatie-innerboom"
+                                    value="innerboom-animatie-glow">
+                                <label for="animatieBlur-innerboom">Blur</label>
+                                <input type="radio" id="animatieBlur-innerboom" name="animatie-innerboom"
+                                    value="innerboom-animatie-blur">
+                                <label for="animatieKnetter-innerboom">Spark</label>
+                                <input type="radio" id="animatieKnetter-innerboom" name="animatie-innerboom"
+                                    value="innerboom-animatie-knetter">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- outerBoom -->
+                <fieldset data-outerboom>
+                    <div>
+                        <div>
+                            <p>Kleur stralen:</p>
+                            <div>
+                                <label for="pink-outerboom">pink</label>
+                                <input type="radio" id="pink-outerboom" name="Kleur-outerboom" value="hotpink-outerboom">
+                            </div>
+                            <div>
+                                <label for="purple-outerboom">purple</label>
+                                <input type="radio" id="purple-outerboom" name="Kleur-outerboom" value="rebeccapurple-outerboom">
+                            </div>
+                            <div>
+                                <label for="blue-outerboom">blue</label>
+                                <input type="radio" id="blue-outerboom" name="Kleur-outerboom" value="dodgerblue-outerboom">
+                            </div>
+                            <div>
+                                <label for="orange-outerboom">orange</label>
+                                <input type="radio" id="orange-outerboom" name="Kleur-outerboom" value="orange-outerboom">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="grote-outerboom">Thickness stralen:</label>
+                            <input type="range" id="grote-outerboom" name="grote-outerboom" min="10" max="200"
+                                value="100">
+                        </div>
+                        <div>
+                            <label for="Dikte-outerboom">Thickness stralen:</label>
+                            <input type="range" id="Dikte-outerboom" name="Dikte-outerboom" min="2" max="20" value="8">
+                        </div>
+                        <div>
+                            <label for="Verte-outerboom">Start from center:</label>
+                            <input type="range" id="Verte-outerboom" name="Verte-outerboom" min="60" max="100"
+                                value="40">
+                        </div>
+                        <div>
+                            <p>animatie style:</p>
+                            <div>
+                                <label for="animatieGlow-innerboom">None</label>
+                                <input type="radio" id="animatieGlow-innerboom" name="animatie-innerboom"
+                                    value="innerboom-animatie-none">
+                                <label for="animatieGlow-outerboom">Glow</label>
+                                <input type="radio" id="animatieGlow-outerboom" name="animatie-outerboom"
+                                    value="outerboom-animatie-glow">
+                                <label for="animatieBlur-outerboom">Blur</label>
+                                <input type="radio" id="animatieBlur-outerboom" name="animatie-outerboom"
+                                    value="outerboom-animatie-blur">
+                                <label for="animatieKnetter-outerboom">Spark</label>
+                                <input type="radio" id="animatieKnetter-outerboom" name="animatie-outerboom"
+                                    value="outerboom-animatie-knetter">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div>
+                <label>Show firework
+                    <input data-start name="firworkshow" type="radio">
+                </label>
+            </div>
+        </section>
+    </footer>
 </body>
+<script src="/js/tinybitofjs.js"></script>
 
 </html>

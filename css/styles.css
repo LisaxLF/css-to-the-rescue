@@ -2,18 +2,77 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    ;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', sans-serif;
+:root {
+    --golden-color: #C28B1F;
+    --light-color: #FFFDF0;
+
+    --height-footer: clamp(25%, 0%, 500px);
+
+    /* VUURWERK */
+    --inner-ring-color: dimgray;
+    --inner-boom-color: dimgray;
+    --outer-boom-color: dimgray;
+    --inner-boom-width: 10px;
+    --outer-boom-width: 8px;
+    --div-trail: dimgray;
+    --inner-boom-translateY: -40px;
+    --outer-boom-translateY: -60px;
+    --outer-boom-deg: 115deg;
+    --highlight-color: #e8dfcb;
+    --inner-ring-width: 20px;
+    --inner-boom-height: 200px;
+    --outer-boom-height: 200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Squada One", sans-serif;
     color: white;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
 }
 
+label,
 p {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Squada One", sans-serif;
+    color: white;
+    text-transform: uppercase;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    gap: .2em;
+}
+
+input[data-start] {
+    display: none;
+}
+
+select,
+option {
+    font-family: "Squada One", sans-serif;
+    color: white;
+    border: none;
+    padding: .5em 1em;
+    font-size: 1.2em;
+    background-color: #191919;
+    text-transform: uppercase;
+}
+
+select {
+    width: 100%;
+    color: #C28B1F;
+}
+
+option {
     color: white;
 }
 
@@ -21,66 +80,484 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background-color: #272727;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4em;
+    height: max-content;
+    flex-direction: column;
+    background-color: #191919;
+    padding: 1em;
+    transition: all 0.5s ease-in-out;
 
-    nav {
+    >div:first-of-type {
         display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    nav ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        list-style: none;
         gap: 1em;
-    }
-}
-
-main {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: black;
-    flex-direction: column;
-}
-
-main>article:first-child {
-    height: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-main>div:first-of-type {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-
-main {
-    article:nth-of-type(2) {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        margin-top: .6em;
 
-        > section {
-            height: 50%;
-            width: 50%;
-            aspect-ratio: 1/1;
+        label[for="customize"] {
+            gap: .5em;
+        }
+
+        label[for="customize"]::after {
+            align-self: center;
+            content: "";
+            display: inline-flex;
+            width: 1.2em;
+            aspect-ratio: 1;
+            z-index: 1;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-image: url(/content/next.svg);
+
+        }
+
+        input[data-customize] {
+            display: none;
         }
     }
+
+    h1 {
+        font-size: clamp(1.5em, 5vw, 3em);
+    }
+}
+
+
+footer {
+    transform: translateY(100%);
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    background-color: #191919;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    color: white;
+
+    >section {
+        padding: 1em;
+        height: var(--height-footer);
+
+        svg:nth-of-type(1) {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        svg:nth-of-type(2) {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        div[data-customizeMenu] {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            section:first-of-type {
+                /* menu voor welk gedeelte */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                gap: 1em;
+                margin-bottom: 1em;
+
+
+            }
+
+            fieldset {
+                border: none;
+                display: none;
+                flex-direction: column;
+                padding: 1em;
+
+
+                >div:first-of-type {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5em;
+
+
+                    div {
+                        display: flex;
+                        flex-direction: row;
+                        gap: .2em;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        /* COLOR LABELS */
+                        div:has(label[for="pink-innerring"]),
+                        div:has(label[for="pink-innerboom"]),
+                        div:has(label[for="pink-outerboom"]) {
+                            padding: 0.1em 0.5em;
+                            border-radius: 5px;
+                            background-color: hotpink;
+                            color: white;
+                        }
+
+                        div:has(label[for="purple-innerring"]),
+                        div:has(label[for="purple-innerboom"]),
+                        div:has(label[for="purple-outerboom"]) {
+                            padding: 0.1em 0.5em;
+                            border-radius: 5px;
+                            background-color: rebeccapurple;
+                            color: white;
+                        }
+
+                        div:has(label[for="blue-innerring"]),
+                        div:has(label[for="blue-innerboom"]),
+                        div:has(label[for="blue-outerboom"]) {
+                            padding: 0.1em 0.5em;
+                            border-radius: 5px;
+                            background-color: darkblue;
+                            color: white;
+                        }
+
+                        div:has(label[for="orange-innerring"]),
+                        div:has(label[for="orange-innerboom"]),
+                        div:has(label[for="orange-outerboom"]) {
+                            padding: 0.1em 0.5em;
+                            border-radius: 5px;
+                            background-color: orange;
+                            color: white;
+                        }
+                    }
+                }
+
+                /* INPUTS */
+                /********** Range Input Styles **********/
+                /*Range Reset*/
+                input[type="range"] {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    background: transparent;
+                    cursor: pointer;
+                    width: 13rem;
+                    display: flex;
+                    align-items: center;
+                }
+
+                /* Removes default focus */
+                input[type="range"]:focus {
+                    outline: none;
+                }
+
+                /***** Chrome, Safari, Opera and Edge Chromium styles *****/
+                /* slider track */
+                input[type="range"]::-webkit-slider-runnable-track {
+                    background-color: var(--light-color);
+                    border-radius: 0.5rem;
+                    height: 0.5rem;
+                }
+
+                /* slider thumb */
+                input[type="range"]::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    /* Override default look */
+                    appearance: none;
+                    margin-top: -.25rem;
+                    /* Centers thumb on the track */
+
+                    /*custom styles*/
+                    background-color: var(--golden-color);
+                    height: 1rem;
+                    width: .5rem;
+                    border-radius: 0.5rem;
+                }
+
+                input[type="range"]:focus::-webkit-slider-thumb {
+                    border: 1px solid var(--golden-color);
+                    outline: 3px solid var(--golden-color);
+                    outline-offset: 0.125rem;
+                }
+
+                /******** Firefox styles ********/
+                /* slider track */
+                input[type="range"]::-moz-range-track {
+                    background-color: var(--golden-color);
+                    border-radius: 0.5rem;
+                    height: 0.5rem;
+                }
+
+                /* slider thumb */
+                input[type="range"]::-moz-range-thumb {
+                    border: none;
+                    /*Removes extra border that FF applies*/
+                    border-radius: 0.5rem;
+                    /*Removes default border-radius that FF applies*/
+
+                    /*custom styles*/
+                    background-color: var(--golden-color);
+                    height: 2rem;
+                    width: 1rem;
+                }
+
+                input[type="range"]:focus::-moz-range-thumb {
+                    border: 1px solid var(--golden-color);
+                    outline: 3px solid var(--golden-color);
+                    outline-offset: 0.125rem;
+                }
+
+            }
+        }
+
+        >div:last-of-type {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+
+            >label::after {
+                align-self: center;
+                content: "";
+                display: inline-flex;
+                width: 1.2em;
+                aspect-ratio: 1;
+                z-index: 1;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-image: url(/content/next.svg);
+            }
+        }
+    }
+}
+
+/* op basis van selectie die aan is moet display aan out. */
+div[data-customizeMenu] section:first-of-type:has(input[value="innerring"]:checked)+fieldset[data-innerring] {
+    display: flex !important;
+}
+
+div[data-customizeMenu] section:first-of-type:has(input[value="innerboom"]:checked)~fieldset[data-innerboom] {
+    display: flex !important;
+}
+
+div[data-customizeMenu] section:first-of-type:has(input[value="outerboom"]:checked)~fieldset[data-outerboom] {
+    display: flex !important;
+}
+
+div[data-customizeMenu] section:first-of-type:has(input[value="innerring"]:checked)>label:first-of-type,
+div[data-customizeMenu] section:first-of-type:has(input[value="innerboom"]:checked)>label:nth-of-type(2),
+div[data-customizeMenu] section:first-of-type:has(input[value="outerboom"]:checked)>label:nth-of-type(3)  {
+    background-color: #C28B1F;
+    padding: .5em 1em;
+    border-radius: 2px;
+    color: white;
+}
+
+section > label {
+    cursor: pointer;
+    padding: .5em 1em;
+    border-radius: 2px;
+    border: 1px solid #C28B1F;
+    color: white;
+}
+
+section > label > input {
+    display: none;
+
+}
+
+section > label:hover {
+    background-color: #e4c892;
+    border: none;
+    color: black;
+}
+
+
+/* has functie voor het open van de "footer" */
+body:has(input[data-customize]:checked) footer {
+    transform: translateY(0%) !important;
+}
+
+body:has(input[data-customize]:checked)>header {
+    transform: translateY(-100%) !important;
+    transition: all 0.5s ease-in-out;
+}
+
+body:has(input[data-customize]:checked)>main {
+    position: absolute;
+    top: 0;
+    height: calc(100vh - var(--height-footer));
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+}
+
+body:has(input[data-customize]:checked) main section:first-of-type>div {
+    scale: 1;
+}
+
+/* als de customize option open is dan moeten de animaties stoppen */
+body:has(input[data-customize]:checked) main article:first-of-type section:nth-of-type(1) div::before,
+body:has(input[data-customize]:checked) main article:first-of-type section:nth-of-type(2) div::before,
+body:has(input[data-customize]:checked) main article:first-of-type section:nth-of-type(3) div::before,
+body:has(input[data-customize]:checked) main article:first-of-type section:nth-of-type(3) div::after {
+    animation-play-state: paused;
+}
+
+body:has(input[data-customize]:checked) main article:first-of-type section:nth-of-type(1) div::before {
+    scale: 1;
+}
+
+
+body:has(input[data-customize]:checked)>main article:first-of-type {
+    width: 50vmin;
+    aspect-ratio: 1;
+    margin: 0.5em;
+}
+
+/* has function voor menu open */
+body:has(input[data-customize]:checked) main section:nth-of-type(1) div,
+body:has(input[data-customize]:checked) main section:nth-of-type(2) div,
+body:has(input[data-customize]:checked) main section:nth-of-type(3) div {
+    background: var(--div-trail);
+}
+
+body:has(input[value="innerring"]:checked) main section:nth-of-type(1) div {
+    border: var(--border-with) solid var(--highlight-color);
+    scale: 1;
+}
+
+/* innerboom highlighted */
+body:has(input[value="innerboom"]:checked) main section:nth-of-type(2) div {
+    border: var(--border-with) solid var(--highlight-color);
+}
+
+/* outerboom highlighted */
+body:has(input[value="outerboom"]:checked) main section:nth-of-type(3) div {
+    border: var(--border-with) solid var(--highlight-color);
+    border: var(--border-with) solid var(--highlight-color);
+}
+
+/* START SHOW */
+body:has(input[data-start]:checked) main article:first-of-type section:nth-of-type(1) div::before,
+body:has(input[data-start]:checked) main article:first-of-type section:nth-of-type(2) div::before,
+body:has(input[data-start]:checked) main article:first-of-type section:nth-of-type(3) div::before,
+body:has(input[data-start]:checked) main article:first-of-type section:nth-of-type(3) div::after {
+    animation-play-state: running;
+}
+
+/* has function voor menu open */
+body:has(input[data-start]:checked) main section:nth-of-type(1) div,
+body:has(input[data-start]:checked) main section:nth-of-type(2) div,
+body:has(input[data-start]:checked) main section:nth-of-type(3) div {
+    background: transparent;
+}
+
+body:has(input[data-start]:checked) footer {
+    transform: translateY(100%) !important;
+}
+
+body:has(input[data-start]:checked) footer {
+    transform: translateY(100%) !important;
+}
+
+body:has(input[data-start]:checked) header {
+    transform: translateY(0%) !important;
+}
+
+/* HAS VOOR HET VERANDEREN VAN DE KLEUREN */
+
+/* inner ring */
+body:has(input[value="hotpink-innerring"]:checked) main section:first-of-type>div {
+    border: var(--border-with) solid hotpink !important;
+    --div-trail: hotpink !important;
+}
+
+body:has(input[value="rebeccapurple-innerring"]:checked) main section:first-of-type>div {
+    border: var(--border-with) solid rebeccapurple !important;
+    --div-trail: rebeccapurple !important;
+}
+
+body:has(input[value="dodgerblue-innerring"]:checked) main section:first-of-type>div {
+    border: var(--border-with) solid dodgerblue !important;
+    --div-trail: dodgerblue !important;
+}
+
+body:has(input[value="orange-innerring"]:checked) main section:first-of-type>div {
+    border: var(--border-with) solid orange !important;
+    --div-trail: orange !important;
+}
+
+/* inner boom */
+body:has(input[value="hotpink-innerboom"]:checked) main section:nth-of-type(2) div,
+body:has(input[value="hotpink-innerboom"]:checked) main section:nth-of-type(2) div::before {
+    border: hotpink !important;
+    --inner-boom-color: hotpink !important;
+    --div-trail: hotpink !important;
+}
+
+body:has(input[value="rebeccapurple-innerboom"]:checked) main section:nth-of-type(2) div {
+    border: rebeccapurple !important;
+    --inner-boom-color: rebeccapurple !important;
+    --div-trail: rebeccapurple !important;
+}
+
+body:has(input[value="dodgerblue-innerboom"]:checked) main section:nth-of-type(2) div {
+    border: dodgerblue !important;
+    --inner-boom-color: dodgerblue !important;
+    --div-trail: dodgerblue !important;
+}
+
+body:has(input[value="orange-innerboom"]:checked) main section:nth-of-type(2) div {
+    border: orange !important;
+    --inner-boom-color: orange !important;
+    --div-trail: orange !important;
+}
+
+/* outer boom */
+body:has(input[value="hotpink-outerboom"]:checked) main section:nth-of-type(3) div {
+    border: hotpink !important;
+    --outer-boom-color: hotpink !important;
+    --div-trail: hotpink !important;
+}
+
+body:has(input[value="rebeccapurple-outerboom"]:checked) main section:nth-of-type(3) div {
+    border: rebeccapurple !important;
+    --outer-boom-color: rebeccapurple !important;
+    --div-trail: rebeccapurple !important;
+}
+
+body:has(input[value="dodgerblue-outerboom"]:checked) main section:nth-of-type(3) div {
+    border: dodgerblue !important;
+    --outer-boom-color: dodgerblue !important;
+    --div-trail: dodgerblue !important;
+}
+
+body:has(input[value="orange-outerboom"]:checked) main section:nth-of-type(3) div {
+    border: orange !important;
+    --outer-boom-color: orange !important;
+    --div-trail: orange !important;
+}
+
+/*  TOEVOEGEN VAN ANIMATIES */
+/* inner boom */
+
+/* preview glow */
+body:has(input[value="innerboom-animatie-glow"]:checked) main section:nth-of-type(2) div,
+body:has(input[value="outerboom-animatie-glow"]:checked) main section:nth-of-type(3) div {
+    animation: Glow var(--animation-dur) ease-in-out;
+}
+
+body:has(input[value="innerboom-animatie-blur"]:checked) main section:nth-of-type(2) div,
+body:has(input[value="outerboom-animatie-blur"]:checked) main section:nth-of-type(3) div {
+    animation: Blur var(--animation-dur) ease-in-out;
+}
+
+body:has(input[value="innerboom-animatie-knetter"]:checked) main section:nth-of-type(2) div,
+body:has(input[value="outerboom-animatie-knetter"]:checked) main section:nth-of-type(3) div {
+    animation: Spark var(--animation-dur) ease-in-out;
 }

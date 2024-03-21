@@ -1,0 +1,460 @@
+:root {
+    --inner-ring-color: dimgray;
+    --inner-boom-color: dimgray;
+    --outer-boom-color: dimgray;
+    --highlight-color: #e8dfcb;
+    --div-trail: dimgray;
+
+
+    --inner-boom-width: 10px;
+    --outer-boom-width: 8px;
+    --inner-boom-translateY: -40px;
+    --outer-boom-translateY: -60px;
+    --outer-boom-deg: 115deg;
+    --inner-ring-width: 20px;
+    --inner-border-with: 8px;
+    --inner-boom-height: 200px;
+    --outer-boom-height: 200px;
+
+    --animation-dur: 10s;
+}
+
+/* VUURWERK */
+main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: silver; */
+    justify-content: center;
+    overflow: hidden;
+}
+
+main article:first-of-type {
+    width: 75vmin;
+    aspect-ratio: 1;
+    margin: .5em;
+}
+
+main article:first-of-type::after {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background: white;
+    position: absolute;
+    transform: translateY(50%);
+    border-radius: 50%;
+    scale: 0;
+
+}
+
+
+
+main article,
+main section {
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+/* ALLE SECTIONS */
+/* algemene regel sections */
+main section {
+    position: absolute;
+    transform-origin: center;
+}
+
+/* alle divs in section 2 inner boom */
+main section:nth-of-type(2) div {
+    width: var(--inner-boom-width);
+    height: var(--inner-boom-height);
+}
+
+main section:nth-of-type(2) div,
+main section:nth-of-type(3) div {
+    position: absolute;
+    bottom: 50%;
+    border-radius: 5px;
+    transform-origin: 50% 100%;
+}
+
+main section:nth-of-type(3) div {
+    position: absolute;
+    bottom: 50%;
+    width: var(--inner-boom-width);
+    height: 50px;
+}
+
+/* div trails */
+main section:nth-of-type(1) div,
+main section:nth-of-type(2) div,
+main section:nth-of-type(3) div {
+    /* background: var(--div-trail); */
+}
+
+/* Algemene regels boom before */
+main section:nth-of-type(2) div::before,
+main section:nth-of-type(3) div::before {
+    content: '';
+    transform-origin: bottom center;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+
+/* INNER CIRCLE */
+main section:first-of-type>div {
+    width: var(--inner-ring-width);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: var(--border-with) solid var(--div-trail);
+    display: flex;
+}
+
+main section:first-of-type>div::before {
+    content: '';
+    width: 50px;
+    aspect-ratio: 1;
+    scale: 0;
+    transform-origin: center;
+    border-radius: 50%;
+    border: var(--inner-border-with) solid var(--div-trail);
+}
+
+/* INNER BOOM  */
+main section:nth-of-type(2) div::before {
+    background: var(--inner-boom-color);
+    width: var(--inner-boom-width);
+    scale: 0;
+    bottom: 0%;
+    top: 90%;
+    border-radius: 5px;
+}
+
+main section:nth-of-type(2) div:nth-of-type(1) {
+    transform: rotate(0deg) translateY(var(--inner-boom-translateY));
+}
+
+main section:nth-of-type(2) div:nth-of-type(2) {
+    transform: rotate(45deg) translateY(var(--inner-boom-translateY));
+}
+
+main section:nth-of-type(2) div:nth-of-type(3) {
+    transform: rotate(90deg) translateY(var(--inner-boom-translateY));
+}
+
+main section:nth-of-type(2) div:nth-of-type(4) {
+    transform: rotate(135deg) translateY(var(--inner-boom-translateY));
+}
+
+main section:nth-of-type(2) div:nth-of-type(5) {
+    transform: rotate(180deg) translateY(var(--inner-boom-translateY));
+}
+
+main section:nth-of-type(2) div:nth-of-type(6) {
+    transform: rotate(225deg) translateY(var(--inner-boom-translateY));
+}
+
+main section:nth-of-type(2) div:nth-of-type(7) {
+    transform: rotate(270deg) translateY(var(--inner-boom-translateY));
+}
+
+main section:nth-of-type(2) div:nth-of-type(8) {
+    transform: rotate(315deg) translateY(var(--inner-boom-translateY));
+}
+
+/* OUTER BOOM SECTION */
+main section:nth-of-type(3)>div {
+    width: var(--outer-boom-width);
+    height: var(--outer-boom-height);
+    border-radius: 5px;
+}
+
+/* little circle at the end */
+main section:nth-of-type(3)>div::before {
+    width: var(--outer-boom-width);
+    height: calc(var(--outer-boom-height) / 5);
+    border-radius: 5px;
+    scale: 0;
+    bottom: 0%;
+    background: var(--outer-boom-color);
+}
+
+main section:nth-of-type(3)>div::after {
+    content: '';
+    grid-area: 1 / 1;
+    position: absolute;
+    width: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    left: 0;
+    top: -30%;
+    opacity: 0;
+    background: radial-gradient(var(--div-trail), white);
+}
+
+/* OUTER BOOM */
+main section:nth-of-type(3) div:nth-of-type(1) {
+    transform: rotate(0deg) translateY(var(--outer-boom-translateY));
+}
+
+main section:nth-of-type(3) div:nth-of-type(2) {
+    transform: rotate(45deg) translateY(var(--outer-boom-translateY));
+}
+
+main section:nth-of-type(3) div:nth-of-type(3) {
+    transform: rotate(90deg) translateY(var(--outer-boom-translateY));
+}
+
+main section:nth-of-type(3) div:nth-of-type(4) {
+    transform: rotate(135deg) translateY(var(--outer-boom-translateY));
+}
+
+main section:nth-of-type(3) div:nth-of-type(5) {
+    transform: rotate(180deg) translateY(var(--outer-boom-translateY));
+}
+
+main section:nth-of-type(3) div:nth-of-type(6) {
+    transform: rotate(225deg) translateY(var(--outer-boom-translateY));
+}
+
+main section:nth-of-type(3) div:nth-of-type(7) {
+    transform: rotate(270deg) translateY(var(--outer-boom-translateY));
+}
+
+main section:nth-of-type(3) div:nth-of-type(8) {
+    transform: rotate(315deg) translateY(var(--outer-boom-translateY));
+}
+
+/* ROTATE SECTIONS */
+main section:nth-of-type(2) {
+    transform: rotate(0deg);
+}
+
+main section:nth-of-type(3) {
+    transform: rotate(var(--outer-boom-deg));
+}
+
+/* main section:nth-of-type(2) div {
+    animation: Glow 2s cubic-bezier(.1, .41, .74, .56) infinite,
+    Knetter 2s cubic-bezier(.1, .41, .74, .56) infinite,
+    Blur 2s cubic-bezier(.1, .41, .74, .56) infinite;
+} */
+
+/* ALLE KEYFRAMES */
+@keyframes explosionInnerBoom {
+    0% {
+        scale: .5;
+        bottom: 0;
+        top: 100%;
+    }
+
+    50% {
+        bottom: 0%;
+        top: 50%;
+        scale: .8;
+    }
+
+    60% {
+        bottom: 0%;
+        top: 80%;
+        scale: 1.2;
+    }
+
+    80% {
+        bottom: 0%;
+        top: 0%;
+        scale: 1.2;
+    }
+
+    100% {
+        bottom: 100%;
+        top: 0%;
+        scale: 0;
+    }
+}
+
+@keyframes Blur {
+    0% {
+        filter: blur(0px);
+    }
+
+    50% {
+        filter: blur(2px);
+    }
+
+    100% {
+        filter: blur(0px);
+    }
+
+}
+
+@keyframes Spark {
+
+    0%,
+    100% {
+        opacity: 0;
+        background-color: var(--inner-boom-color);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        opacity: 0.8;
+        background-color: var(--inner-boom-color);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        opacity: 0.6;
+        background-color: var(--inner-boom-color);
+    }
+}
+
+@keyframes Glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px 2px var(--inner-boom-color);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        box-shadow: 0 0 20px 4px var(--inner-boom-color);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        box-shadow: 0 0 30px 6px var(--inner-boom-color);
+    }
+}
+
+@keyframes zigzag {
+
+    0%,
+    35%,
+    70%,
+    100% {
+        transform: translateX(0);
+        height: 25px;
+    }
+
+    40%,
+    50%,
+    60% {
+        transform: translateX(5px);
+    }
+
+    45%,
+    55%,
+    65% {
+        transform: translateX(-5px);
+    }
+
+    90% {
+        opacity: 0.7;
+        scale: .8;
+    }
+
+    100% {
+        bottom: 100%;
+        scale: 0.5;
+    }
+}
+
+@keyframes sparkAfters {
+    0% {
+        transform: rotate(0deg);
+        opacity: 1;
+        background-color: white;
+    }
+
+    50% {
+        background-color: white;
+    }
+
+    100% {
+        scale: 1.5;
+        opacity: 0;
+        transform: rotate(180deg);
+        background-color: white;
+    }
+}
+
+/* inner circle animation */
+@keyframes innerRingAnimate {
+    0% {
+        scale: 0;
+        opacity: 0;
+    }
+
+    50% {
+        scale: 1.2;
+        opacity: 1;
+    }
+
+    100% {
+        scale: 1;
+        opacity: 0;
+    }
+}
+
+/* AFSCHIETER */
+@keyframes Afschieter {
+    0% {
+        bottom: 0%;
+        scale: 0;
+    }
+
+    90% {
+        opacity: 1
+    }
+
+    100% {
+        bottom: 50%;
+        scale: 1;
+        opacity: 0;
+    }
+}
+
+
+/* afschieter index */
+main article:first-of-type::after {
+    --index: 0;
+    animation: Afschieter 1s ease-in-out;
+}
+
+/* inner ring index */
+main section:first-of-type>div::before {
+    --index: 1;
+    animation: innerRingAnimate 1.5s cubic-bezier(0, .9, .82, .99) infinite 1s;
+}
+
+/* inner boom index */
+main section:nth-of-type(2) div::before {
+    --index: 2;
+    animation: explosionInnerBoom 2s cubic-bezier(.13, .7, .42, 1.01) infinite 2s;
+}
+
+/* outer boom index */
+main section:nth-of-type(3)>div::before {
+    --index: 3;
+    animation: zigzag 2s cubic-bezier(1, 0, .01, .97) infinite 3.5s;
+}
+
+/* outer sparkles */
+main section:nth-of-type(3)>div::after {
+    --index: 4;
+    animation: sparkAfters 1s cubic-bezier(.1, .41, .74, .56) infinite 5.5s;
+}
