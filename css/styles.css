@@ -114,7 +114,7 @@ header {
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
-            background-image: url(/content/next.svg);
+            background-image: url(../content/next.svg);
 
         }
 
@@ -330,7 +330,7 @@ footer {
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-position: center;
-                background-image: url(/content/next.svg);
+                background-image: url(../content/next.svg);
             }
         }
     }
