@@ -338,15 +338,15 @@ footer {
 
 /* op basis van selectie die aan is moet display aan out. */
 div[data-customizeMenu] section:first-of-type:has(input[value="innerring"]:checked)+fieldset[data-innerring] {
-    display: flex !important;
+    display: flex;
 }
 
 div[data-customizeMenu] section:first-of-type:has(input[value="innerboom"]:checked)~fieldset[data-innerboom] {
-    display: flex !important;
+    display: flex;
 }
 
 div[data-customizeMenu] section:first-of-type:has(input[value="outerboom"]:checked)~fieldset[data-outerboom] {
-    display: flex !important;
+    display: flex;
 }
 
 div[data-customizeMenu] section:first-of-type:has(input[value="innerring"]:checked)>label:first-of-type,
@@ -380,11 +380,11 @@ section>label:hover {
 
 /* has functie voor het open van de "footer" */
 body:has(input[data-customize]:checked) footer {
-    transform: translateY(0%) !important;
+    transform: translateY(0%);
 }
 
 body:has(input[data-customize]:checked)>header {
-    transform: translateY(-100%) !important;
+    transform: translateY(-100%);
     transition: all 0.5s ease-in-out;
 }
 
@@ -458,89 +458,89 @@ body:has(input[data-start]:checked) main section:nth-of-type(3) div {
 }
 
 body:has(input[data-start]:checked) footer {
-    transform: translateY(100%) !important;
+    transform: translateY(100%);
 }
 
 body:has(input[data-start]:checked) footer {
-    transform: translateY(100%) !important;
+    transform: translateY(100%);
 }
 
 body:has(input[data-start]:checked) header {
-    transform: translateY(0%) !important;
+    transform: translateY(0%);
 }
 
 /* HAS VOOR HET VERANDEREN VAN DE KLEUREN */
 
 /* inner ring */
 body:has(input[value="hotpink-innerring"]:checked) main section:first-of-type>div {
-    border: var(--border-with) solid hotpink !important;
-    --div-trail: hotpink !important;
+    border: var(--border-with) solid hotpink;
+    --div-trail: hotpink;
 }
 
 body:has(input[value="rebeccapurple-innerring"]:checked) main section:first-of-type>div {
-    border: var(--border-with) solid rebeccapurple !important;
-    --div-trail: rebeccapurple !important;
+    border: var(--border-with) solid rebeccapurple;
+    --div-trail: rebeccapurple;
 }
 
 body:has(input[value="dodgerblue-innerring"]:checked) main section:first-of-type>div {
-    border: var(--border-with) solid dodgerblue !important;
-    --div-trail: dodgerblue !important;
+    border: var(--border-with) solid dodgerblue;
+    --div-trail: dodgerblue;
 }
 
 body:has(input[value="orange-innerring"]:checked) main section:first-of-type>div {
-    border: var(--border-with) solid orange !important;
-    --div-trail: orange !important;
+    border: var(--border-with) solid orange;
+    --div-trail: orange;
 }
 
 /* inner boom */
 body:has(input[value="hotpink-innerboom"]:checked) main section:nth-of-type(2) div,
 body:has(input[value="hotpink-innerboom"]:checked) main section:nth-of-type(2) div::before {
-    border: hotpink !important;
-    --inner-boom-color: hotpink !important;
-    --div-trail: hotpink !important;
+    border: hotpink;
+    --inner-boom-color: hotpink;
+    --div-trail: hotpink;
 }
 
 body:has(input[value="rebeccapurple-innerboom"]:checked) main section:nth-of-type(2) div {
-    border: rebeccapurple !important;
-    --inner-boom-color: rebeccapurple !important;
-    --div-trail: rebeccapurple !important;
+    border: rebeccapurple;
+    --inner-boom-color: rebeccapurple;
+    --div-trail: rebeccapurple;
 }
 
 body:has(input[value="dodgerblue-innerboom"]:checked) main section:nth-of-type(2) div {
-    border: dodgerblue !important;
-    --inner-boom-color: dodgerblue !important;
-    --div-trail: dodgerblue !important;
+    border: dodgerblue;
+    --inner-boom-color: dodgerblue;
+    --div-trail: dodgerblue;
 }
 
 body:has(input[value="orange-innerboom"]:checked) main section:nth-of-type(2) div {
-    border: orange !important;
-    --inner-boom-color: orange !important;
-    --div-trail: orange !important;
+    border: orange;
+    --inner-boom-color: orange;
+    --div-trail: orange;
 }
 
 /* outer boom */
 body:has(input[value="hotpink-outerboom"]:checked) main section:nth-of-type(3) div {
-    border: hotpink !important;
-    --outer-boom-color: hotpink !important;
-    --div-trail: hotpink !important;
+    border: hotpink;
+    --outer-boom-color: hotpink;
+    --div-trail: hotpink;
 }
 
 body:has(input[value="rebeccapurple-outerboom"]:checked) main section:nth-of-type(3) div {
-    border: rebeccapurple !important;
-    --outer-boom-color: rebeccapurple !important;
-    --div-trail: rebeccapurple !important;
+    border: rebeccapurple;
+    --outer-boom-color: rebeccapurple;
+    --div-trail: rebeccapurple;
 }
 
 body:has(input[value="dodgerblue-outerboom"]:checked) main section:nth-of-type(3) div {
-    border: dodgerblue !important;
-    --outer-boom-color: dodgerblue !important;
-    --div-trail: dodgerblue !important;
+    border: dodgerblue;
+    --outer-boom-color: dodgerblue;
+    --div-trail: dodgerblue;
 }
 
 body:has(input[value="orange-outerboom"]:checked) main section:nth-of-type(3) div {
-    border: orange !important;
-    --outer-boom-color: orange !important;
-    --div-trail: orange !important;
+    border: orange;
+    --outer-boom-color: orange;
+    --div-trail: orange;
 }
 
 /*  TOEVOEGEN VAN ANIMATIES */
@@ -560,121 +560,4 @@ body:has(input[value="outerboom-animatie-blur"]:checked) main section:nth-of-typ
 body:has(input[value="innerboom-animatie-knetter"]:checked) main section:nth-of-type(2) div,
 body:has(input[value="outerboom-animatie-knetter"]:checked) main section:nth-of-type(3) div {
     animation: Spark var(--animation-dur) ease-in-out;
-}
-
-
-@keyframes wave {
-    0%, 100% {
-        font-style: italic;
-        font-weight: normal;
-    }
-
-    25% {
-        font-style: italic;
-        font-weight: bold;
-    }
-
-    50% {
-        font-style: normal;
-        font-weight: bold;
-    }
-
-    75% {
-        font-style: italic;
-        font-weight: bold;
-    }
-}
-
-
-@keyframes rainbow {
-    0% {
-        color: #ff0000;
-    }
-
-    10% {
-        color: #ff7700;
-    }
-
-    20% {
-        color: #ffee00;
-    }
-
-    30% {
-        color: #00ff00;
-    }
-
-    40% {
-        color: #0077ff;
-    }
-
-    50% {
-        color: #ee00ff;
-    }
-
-    60% {
-        color: #ff00ff;
-    }
-
-    70% {
-        color: #ff0077;
-    }
-
-    80% {
-        color: #ff7700;
-    }
-
-    90% {
-        color: #ffee00;
-    }
-    100% {
-        color: #00ff00;
-    }
-}
-
-/* Stijl elke letter individueel */
-h1 {
-    font-size: 3rem;
-    text-align: center;
-
-}
-
-h1 span {
-    height: 1em;
-    aspect-ratio: 1;
-    display: inline-block;
-    animation: rainbow 10s infinite,
-        wave 2s infinite;
-}
-
-/* Animatie voor elke letter */
-h1 span:nth-child(1) {
-    animation-delay: 0s;
-}
-
-h1 span:nth-child(2) {
-    animation-delay: 0.1s;
-}
-
-h1 span:nth-child(3) {
-    animation-delay: 0.2s;
-}
-
-h1 span:nth-child(4) {
-    animation-delay: 0.3s;
-}
-
-h1 span:nth-child(5) {
-    animation-delay: 0.4s;
-}
-
-h1 span:nth-child(6) {
-    animation-delay: 0.5s;
-}
-
-h1 span:nth-child(7) {
-    animation-delay: 0.6s;
-}
-
-h1 span:nth-child(8) {
-    animation-delay: 0.7s;
 }

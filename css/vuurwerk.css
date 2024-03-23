@@ -24,11 +24,10 @@ main {
     display: flex;
     height: 100vh;
     width: 100vw;
+    /* bah */
     flex-direction: column;
     align-items: center;
-    /* background-color: silver; */
     justify-content: center;
-    overflow: hidden;
 }
 
 main article:first-of-type {
@@ -48,7 +47,6 @@ main article:first-of-type::after {
     scale: 0;
 
 }
-
 
 
 main article,
@@ -237,224 +235,28 @@ main section:nth-of-type(3) {
     transform: rotate(var(--outer-boom-deg));
 }
 
-/* main section:nth-of-type(2) div {
-    animation: Glow 2s cubic-bezier(.1, .41, .74, .56) infinite,
-    Knetter 2s cubic-bezier(.1, .41, .74, .56) infinite,
-    Blur 2s cubic-bezier(.1, .41, .74, .56) infinite;
-} */
 
-/* ALLE KEYFRAMES */
-@keyframes explosionInnerBoom {
-    0% {
-        scale: .5;
-        bottom: 0;
-        top: 100%;
-    }
-
-    50% {
-        bottom: 0%;
-        top: 50%;
-        scale: .8;
-    }
-
-    60% {
-        bottom: 0%;
-        top: 80%;
-        scale: 1.2;
-    }
-
-    80% {
-        bottom: 0%;
-        top: 0%;
-        scale: 1.2;
-    }
-
-    100% {
-        bottom: 100%;
-        top: 0%;
-        scale: 0;
-    }
-}
-
-@keyframes Blur {
-    0% {
-        filter: blur(0px);
-    }
-
-    50% {
-        filter: blur(2px);
-    }
-
-    100% {
-        filter: blur(0px);
-    }
-
-}
-
-@keyframes Spark {
-
-    0%,
-    100% {
-        opacity: 0;
-        background-color: var(--inner-boom-color);
-    }
-
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-        opacity: 0.8;
-        background-color: var(--inner-boom-color);
-    }
-
-    20%,
-    40%,
-    60%,
-    80% {
-        opacity: 0.6;
-        background-color: var(--inner-boom-color);
-    }
-}
-
-@keyframes Glow {
-
-    0%,
-    100% {
-        box-shadow: 0 0 10px 2px var(--inner-boom-color);
-    }
-
-    10%,
-    30%,
-    50%,
-    70%,
-    90% {
-        box-shadow: 0 0 20px 4px var(--inner-boom-color);
-    }
-
-    20%,
-    40%,
-    60%,
-    80% {
-        box-shadow: 0 0 30px 6px var(--inner-boom-color);
-    }
-}
-
-@keyframes zigzag {
-
-    0%,
-    35%,
-    70%,
-    100% {
-        transform: translateX(0);
-        height: 25px;
-    }
-
-    40%,
-    50%,
-    60% {
-        transform: translateX(5px);
-    }
-
-    45%,
-    55%,
-    65% {
-        transform: translateX(-5px);
-    }
-
-    90% {
-        opacity: 0.7;
-        scale: .8;
-    }
-
-    100% {
-        bottom: 100%;
-        scale: 0.5;
-    }
-}
-
-@keyframes sparkAfters {
-    0% {
-        transform: rotate(0deg);
-        opacity: 1;
-        background-color: white;
-    }
-
-    50% {
-        background-color: white;
-    }
-
-    100% {
-        scale: 1.5;
-        opacity: 0;
-        transform: rotate(180deg);
-        background-color: white;
-    }
-}
-
-/* inner circle animation */
-@keyframes innerRingAnimate {
-    0% {
-        scale: 0;
-        opacity: 0;
-    }
-
-    50% {
-        scale: 1.2;
-        opacity: 1;
-    }
-
-    100% {
-        scale: 1;
-        opacity: 0;
-    }
-}
-
-/* AFSCHIETER */
-@keyframes Afschieter {
-    0% {
-        bottom: 0%;
-        scale: 0;
-    }
-
-    90% {
-        opacity: 1
-    }
-
-    100% {
-        bottom: 50%;
-        scale: 1;
-        opacity: 0;
-    }
-}
-
-
-/* afschieter index */
+/* afschieter */
 main article:first-of-type::after {
-    --index: 0;
-    animation: Afschieter 1s ease-in-out;
+    animation: Afschieter var(--animation-dur) ease-in-out infinite;
 }
 
-/* inner ring index */
+/* inner ring */
 main section:first-of-type>div::before {
-    --index: 1;
-    animation: innerRingAnimate 1.5s cubic-bezier(0, .9, .82, .99) infinite 1s;
+    animation: innerRingAnimate var(--animation-dur) cubic-bezier(0, .9, .82, .99) infinite;
 }
 
-/* inner boom index */
+/* inner boom */
 main section:nth-of-type(2) div::before {
-    --index: 2;
-    animation: explosionInnerBoom 2s cubic-bezier(.13, .7, .42, 1.01) infinite 2s;
+    animation: explosionInnerBoom var(--animation-dur) cubic-bezier(.13, .7, .42, 1.01) infinite;
 }
 
-/* outer boom index */
+/* outer boom */
 main section:nth-of-type(3)>div::before {
-    --index: 3;
-    animation: zigzag 2s cubic-bezier(1, 0, .01, .97) infinite 3.5s;
+    animation: explosionOuterBoom var(--animation-dur) cubic-bezier(1, 0, .01, .97) infinite;
 }
 
 /* outer sparkles */
 main section:nth-of-type(3)>div::after {
-    --index: 4;
-    animation: sparkAfters 1s cubic-bezier(.1, .41, .74, .56) infinite 5.5s;
+    animation: explosionOuterBoomAfter var(--animation-dur) cubic-bezier(.1, .41, .74, .56) infinite;
 }

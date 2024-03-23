@@ -1,0 +1,209 @@
+:root {
+    --animation-dur: 7s;
+}
+
+@keyframes Afschieter {
+    0% {
+        bottom: 0%;
+        scale: 0;
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    14.3% {
+        bottom: 50%;
+        scale: 1;
+        opacity: 1;
+    }
+
+    15.3% {
+        scale: 0;
+        opacity: 0;
+    }
+}
+
+/* inner ring */
+@keyframes innerRingAnimate {
+    15.3% {
+        scale: 0;
+        opacity: 0;
+    }
+
+    25% {
+        scale: 1.2;
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    33% {
+        scale: 0;
+    }
+
+    35.7% {
+        opacity: 1;
+    }
+
+    36.7% {
+        scale: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes explosionInnerBoom {
+    30% {
+        scale: 0;
+    }
+
+    30.7% {
+        scale: .5;
+        bottom: 0%;
+        top: 100%;
+    }
+
+    50% {
+        scale: .8;
+        bottom: 0%;
+        top: 50%;
+    }
+
+    55% {
+        bottom: 0%;
+        top: 0%;
+        scale: 1.2;
+    }
+
+    64.3% {
+        bottom: 100%;
+        top: 0%;
+        scale: 0;
+    }
+}
+
+@keyframes explosionOuterBoom {
+    50% {
+        scale: 0;
+
+    }
+
+    64.3%,
+    67%,
+    70%,
+    73% {
+        transform: translateX(0);
+        height: 25px;
+        scale: 1;
+    }
+
+    65%,
+    68%,
+    71% {
+        transform: translateX(5px);
+    }
+
+    66%,
+    69%,
+    72% {
+        transform: translateX(-5px);
+    }
+
+    82% {
+        opacity: 0.7;
+    }
+
+    85% {
+        bottom: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes explosionOuterBoomAfter {
+    84% {
+        opacity: 0;
+    }
+    85% {
+        opacity: 1;
+        scale: 0;
+        background-color: var(--outer-boom-color);
+    }
+
+    95% {
+        scale: 2.5;
+        opacity: 0;
+        background-color: var(--outer-boom-color);
+    }
+
+    96% {
+        scale: 0;
+        opacity: 0;
+    }
+}
+
+/* opties for boom effect */
+@keyframes Blur {
+    0% {
+        filter: blur(0px);
+    }
+
+    50% {
+        filter: blur(2px);
+    }
+
+    100% {
+        filter: blur(0px);
+    }
+
+}
+
+@keyframes Spark {
+
+    0%,
+    100% {
+        opacity: 0;
+        background-color: var(--inner-boom-color);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        opacity: 0.8;
+        background-color: var(--inner-boom-color);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        opacity: 0.6;
+        background-color: var(--inner-boom-color);
+    }
+}
+
+@keyframes Glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px 2px var(--inner-boom-color);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        box-shadow: 0 0 20px 4px var(--inner-boom-color);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        box-shadow: 0 0 30px 6px var(--inner-boom-color);
+    }
+}
