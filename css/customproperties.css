@@ -1,0 +1,41 @@
+:root {
+    --start-firework: true;
+    --customize-innering: false;
+    --customize-innerboom: false;
+    --customize-outerboom: false;
+
+    --color-trail: #6c6868;
+    --golden-color: #C28B1F;
+    --light-color: #FFFDF0;
+
+    --inner-ring-color: var(--light-color);
+    --inner-boom-color: var(--light-color);
+    --outer-boom-color: var(--light-color);
+    --highlight-color: #e8dfcb;
+
+    --box-shadow: 4px 4px 15px 0 black;
+
+    --inner-ring-border-style: solid;
+    --inner-ring-border-width: 4px;
+    --inner-boom-width: 10px;
+    --outer-boom-width: 8px;
+    --inner-boom-translateY: -40px;
+    --outer-boom-translateY: -60px;
+    --outer-boom-deg: 115deg;
+    --inner-ring-width: 20px;
+    --inner-border-with: 8px;
+    --inner-boom-height: 200px;
+    --outer-boom-height: 200px;
+
+    --animation-dur: 10s;
+
+    --padding-input-buttons: .3em .5em;
+
+    --height-footer: clamp(18rem, 9.415vw + 0.512rem, 16rem);
+    --height-header: clamp(10rem, 9.415vw + 0.512rem, 13rem);
+
+    --inner-boom-animation-style: none;
+    --outer-boom-animation-style: none;
+}
+
+

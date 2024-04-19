@@ -1,7 +1,4 @@
-:root {
-    --animation-dur: 7s;
-}
-
+/* KEYFRAMES VAN ALLE ANIMATIONS */
 @keyframes Afschieter {
     0% {
         bottom: 0%;
@@ -87,7 +84,13 @@
 @keyframes explosionOuterBoom {
     50% {
         scale: 0;
+        bottom: 0%;
 
+    }
+
+    51% {
+        scale: 1;
+        bottom: 80%;
     }
 
     64.3%,
@@ -95,29 +98,20 @@
     70%,
     73% {
         transform: translateX(0);
-        height: 25px;
+        height: 50%;
         scale: 1;
+        bottom: 90%;
     }
 
-    65%,
-    68%,
-    71% {
-        transform: translateX(5px);
-    }
-
-    66%,
-    69%,
-    72% {
-        transform: translateX(-5px);
-    }
-
-    82% {
+    75% {
         opacity: 0.7;
     }
 
-    85% {
+    76% {
         bottom: 100%;
         opacity: 0;
+        height: 100%;
+        scale: 0;
     }
 }
 
@@ -144,7 +138,7 @@
 }
 
 /* opties for boom effect */
-@keyframes Blur {
+@keyframes blur {
     0% {
         filter: blur(0px);
     }
@@ -159,7 +153,7 @@
 
 }
 
-@keyframes Spark {
+@keyframes sparkInnerBoom {
 
     0%,
     100% {
@@ -185,7 +179,7 @@
     }
 }
 
-@keyframes Glow {
+@keyframes glowInnerBoom {
 
     0%,
     100% {
@@ -205,5 +199,54 @@
     60%,
     80% {
         box-shadow: 0 0 30px 6px var(--inner-boom-color);
+    }
+}
+
+@keyframes sparkOuterBoom {
+
+    0%,
+    100% {
+        opacity: 0;
+        background-color: var(--outer-boom-color);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        opacity: 0.8;
+        background-color: var(--outer-boom-color);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        opacity: 0.6;
+        background-color: var(--outer-boom-color);
+    }
+}
+
+@keyframes glowOuterBoom {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px 2px var(--outer-boom-color);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        box-shadow: 0 0 20px 4px var(--outer-boom-color);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        box-shadow: 0 0 30px 6px var(--outer-boom-color);
     }
 }

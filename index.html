@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/customproperties.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/vuurwerk.css">
     <link rel="stylesheet" href="css/animations.css">
@@ -25,12 +26,14 @@
             <span>o</span>
             <span>r</span>
             <span>k</span>
-            
-        </h1>        
+
+        </h1>
         <p>customize your own firework</p>
         <div>
-            <label for="customize">customize</label>
-            <input data-customize name="firworkshow" type="radio" id="customize">
+            <label for="customize">
+                customize
+                <input value="customize" name="fireworkshow" type="radio" id="customize">
+            </label>
         </div>
     </header>
     <main>
@@ -73,7 +76,7 @@
                 <section>
                     <!-- <label for="options">Selecteer het gedeelte:</label> -->
                     <label>
-                        <input type="radio" name="gedeelte" value="innerring">
+                        <input type="radio" name="gedeelte" value="innerring" checked>
                         <span>innerRing</span>
                     </label>
                     <label>
@@ -89,42 +92,49 @@
                 <fieldset data-innerring>
                     <div>
                         <div>
-                            <p>Kleur ring:</p>
+                            <p>Color ring:</p>
                             <div>
-                                <label for="pink-innerring">pink</label>
-                                <input type="radio" id="pink-innerring" name="Kleur" value="hotpink-innerring">
-                            </div>
-                            <div>
-                                <label for="purple-innerring">purple</label>
-                                <input type="radio" id="purple-innerring" name="Kleur" value="rebeccapurple-innerring">
-                            </div>
-                            <div>
-                                <label for="blue-innerring">blue</label>
-                                <input type="radio" id="blue-innerring" name="Kleur" value="dodgerblue-innerring">
-                            </div>
-                            <div>
-                                <label for="orange-innerring">orange</label>
-                                <input type="radio" id="orange-innerring" name="Kleur" value="orange-innerring">
+                                <label for="pink-innerring">
+                                    <input type="radio" id="pink-innerring" name="Color" value="hotpink-innerring">
+                                    pink
+                                </label>
+                                <label for="purple-innerring">
+                                    <input type="radio" id="purple-innerring" name="Color"
+                                        value="rebeccapurple-innerring">
+                                    purple
+                                </label>
+                                <label for="blue-innerring">
+                                    <input type="radio" id="blue-innerring" name="Color" value="dodgerblue-innerring">
+                                    blue
+                                </label>
+                                <label for="orange-innerring">
+                                    <input type="radio" id="orange-innerring" name="Color" value="orange-innerring">
+                                    orange
+                                </label>
                             </div>
                         </div>
+                        <label for="grote-innerring">Scale ring:
+                            <input type="range" id="grote-innerring" name="grote-innerring" min="20" max="60" value="50">
+                        </label>
+                        <label for="Dikte-innerring">Thickness ring:
+                            <input type="range" id="dikte-innerring" name="Dikte-innerring" min="2" max="10" value="4">
+                        </label>
                         <div>
-                            <label for="grote-innerring">Bigness ring:</label>
-                            <input type="range" id="grote-innerring" name="grote-innerring" min="1" max="75" value="50">
-                        </div>
-                        <div>
-                            <label for="Dikte-innerring">Thickness ring:</label>
-                            <input type="range" id="grote-innerring" name="Dikte-innerring" min="1" max="10" value="8"                               value="100">
-                        </div>
-                        <div>
-                            <label for="BorderStyle-innerring">Solid</label>
-                            <input type="radio" id="BorderStyle-innerring" name="BorderStyle-innerring"
-                                value="innerring-Border-style">
-                            <label for="BorderStyle-innerring">Dotted</label>
-                            <input type="radio" id="BorderStyle-innerring" name="BorderStyle-innerring"
-                                value="innerring-Border-style-dotted">
-                            <label for="BorderStyle-innerring">Dashed</label>
-                            <input type="radio" id="BorderStyle-innerring" name="BorderStyle-innerring"
-                                value="innerring-Border-style-dashed">
+                            <p>Border style:</p>
+                            <div>
+                                <label>
+                                    <input type="radio" name="BorderStyle" value="innerring-Border-style-solid">
+                                    Solid
+                                </label>
+                                <label>
+                                    <input type="radio" name="BorderStyle" value="innerring-Border-style-dotted">
+                                    Dotted
+                                </label>
+                                <label>
+                                    <input type="radio" name="BorderStyle" value="innerring-Border-style-dashed">
+                                    Dashed
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </fieldset>
@@ -134,51 +144,65 @@
                         <div>
                             <p>Color beams:</p>
                             <div>
-                                <label for="pink-innerboom">pink</label>
-                                <input type="radio" id="pink-innerboom" name="Kleur-innerboom" value="hotpink-innerboom">
-                            </div>
-                            <div>
-                                <label for="purple-innerboom">purple</label>
-                                <input type="radio" id="purple-innerboom" name="Kleur-innerboom" value="rebeccapurple-innerboom">
-                            </div>
-                            <div>
-                                <label for="blue-innerboom">blue</label>
-                                <input type="radio" id="blue-innerboom" name="Kleur-innerboom" value="dodgerblue-innerboom">
-                            </div>
-                            <div>
-                                <label for="orange-innerboom">orange</label>
-                                <input type="radio" id="orange-innerboom" name="Kleur-innerboom" value="orange-innerboom">
+                                <label>
+                                    <input type="radio" id="pink-innerboom" name="Color-innerboom"
+                                        value="hotpink-innerboom">
+                                    pink
+                                </label>
+                                <label>
+                                    <input type="radio" id="purple-innerboom" name="Color-innerboom"
+                                        value="rebeccapurple-innerboom">
+                                    purple
+                                </label>
+                                <label>
+                                    <input type="radio" id="blue-innerboom" name="Color-innerboom"
+                                        value="dodgerblue-innerboom">
+                                    blue
+                                </label>
+                                <label>
+                                    <input type="radio" id="orange-innerboom" name="Color-innerboom"
+                                        value="orange-innerboom">
+                                    orange
+                                </label>
                             </div>
                         </div>
-                        <div>
-                            <label for="grote-innerboom">Bigness beams:</label>
+                        <label>
+                            Bigness beams:
                             <input type="range" id="grote-innerboom" name="grote-innerboom" min="10" max="200"
                                 value="100">
-                        </div>
-                        <div>
-                            <label for="Dikte-innerboom">Thickness beams:</label>
-                            <input type="range" id="Dikte-innerboom" name="Dikte-innerboom" min="2" max="20" value="8">
-                        </div>
-                        <div>
-                            <label for="Vert-innerboome">Start from center:</label>
-                            <input type="range" id="Verte-innerboom" name="Verte-innerboom" min="40" max="100"
+                        </label>
+                        <label>
+                            Thickness beams:
+                            <input type="range" id="dikte-innerboom" name="Dikte-innerboom" min="2" max="20" value="8">
+                        </label>
+                        <label>
+                            Start from center:
+                            <input type="range" id="verte-innerboom" name="Vert-innerboom" min="40" max="100"
                                 value="40">
-                        </div>
+                        </label>
                         <div>
                             <p>animatie style:</p>
                             <div>
-                                <label for="animatie-innerboom">None</label>
-                                <input type="radio" id="animatie-innerboom" name="animatie-innerboom"
-                                    value="innerboom-animatie-none">
-                                <label for="animatieGlow-innerboom">Glow</label>
-                                <input type="radio" id="animatieGlow-innerboom" name="animatie-innerboom"
-                                    value="innerboom-animatie-glow">
-                                <label for="animatieBlur-innerboom">Blur</label>
-                                <input type="radio" id="animatieBlur-innerboom" name="animatie-innerboom"
-                                    value="innerboom-animatie-blur">
-                                <label for="animatieKnetter-innerboom">Spark</label>
-                                <input type="radio" id="animatieKnetter-innerboom" name="animatie-innerboom"
-                                    value="innerboom-animatie-knetter">
+                                <label>
+                                    <input type="radio" id="animatie-innerboom" name="animatie-innerboom"
+                                        value="innerboom-animation-none">
+                                    None
+                                </label>
+                                <label>
+                                    <input type="radio" id="animatieGlow-innerboom" name="animatie-innerboom"
+                                        value="innerboom-animation-glow">
+                                    Glow
+                                </label>
+                                <label>
+                                    <input type="radio" id="animatieBlur-innerboom" name="animatie-innerboom"
+                                        value="innerboom-animation-blur">
+                                    Blur
+                                </label>
+                                <label>
+                                    <input type="radio" id="animatieKnetter-innerboom" name="animatie-innerboom"
+                                        value="innerboom-animation-spark">
+                                    Spark
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -187,53 +211,64 @@
                 <fieldset data-outerboom>
                     <div>
                         <div>
-                            <p>Kleur stralen:</p>
+                            <p>Color beams:</p>
                             <div>
-                                <label for="pink-outerboom">pink</label>
-                                <input type="radio" id="pink-outerboom" name="Kleur-outerboom" value="hotpink-outerboom">
-                            </div>
-                            <div>
-                                <label for="purple-outerboom">purple</label>
-                                <input type="radio" id="purple-outerboom" name="Kleur-outerboom" value="rebeccapurple-outerboom">
-                            </div>
-                            <div>
-                                <label for="blue-outerboom">blue</label>
-                                <input type="radio" id="blue-outerboom" name="Kleur-outerboom" value="dodgerblue-outerboom">
-                            </div>
-                            <div>
-                                <label for="orange-outerboom">orange</label>
-                                <input type="radio" id="orange-outerboom" name="Kleur-outerboom" value="orange-outerboom">
+                                <label>
+                                    <input type="radio" id="pink-outerboom" name="Color-outerboom"
+                                        value="hotpink-outerboom">
+                                    pink
+                                </label>
+                                <label>
+                                    <input type="radio" id="purple-outerboom" name="Color-outerboom"
+                                        value="rebeccapurple-outerboom">
+                                    purple
+                                </label>
+                                <label>
+                                    <input type="radio" id="blue-outerboom" name="Color-outerboom"
+                                        value="dodgerblue-outerboom">
+                                    blue
+                                </label>
+                                <label>
+                                    <input type="radio" id="orange-outerboom" name="Color-outerboom"
+                                        value="orange-outerboom">
+                                    orange
+                                </label>
                             </div>
                         </div>
-                        <div>
-                            <label for="grote-outerboom">Thickness stralen:</label>
+                        <label>Reaching of beams:
                             <input type="range" id="grote-outerboom" name="grote-outerboom" min="10" max="200"
                                 value="100">
-                        </div>
-                        <div>
-                            <label for="Dikte-outerboom">Thickness stralen:</label>
-                            <input type="range" id="Dikte-outerboom" name="Dikte-outerboom" min="2" max="20" value="8">
-                        </div>
-                        <div>
-                            <label for="Verte-outerboom">Start from center:</label>
-                            <input type="range" id="Verte-outerboom" name="Verte-outerboom" min="60" max="100"
+                        </label>
+                        <label>Thickness beams:
+                            <input type="range" id="dikte-outerboom" name="dikte-outerboom" min="2" max="20" value="8">
+                        </label>
+                        <label>Start from center:
+                            <input type="range" id="verte-outerboom" name="verte-outerboom" min="60" max="100"
                                 value="40">
-                        </div>
+                        </label>
                         <div>
-                            <p>animatie style:</p>
+                            <p>animation style:</p>
                             <div>
-                                <label for="animatieGlow-innerboom">None</label>
-                                <input type="radio" id="animatieGlow-innerboom" name="animatie-innerboom"
-                                    value="innerboom-animatie-none">
-                                <label for="animatieGlow-outerboom">Glow</label>
-                                <input type="radio" id="animatieGlow-outerboom" name="animatie-outerboom"
-                                    value="outerboom-animatie-glow">
-                                <label for="animatieBlur-outerboom">Blur</label>
-                                <input type="radio" id="animatieBlur-outerboom" name="animatie-outerboom"
-                                    value="outerboom-animatie-blur">
-                                <label for="animatieKnetter-outerboom">Spark</label>
-                                <input type="radio" id="animatieKnetter-outerboom" name="animatie-outerboom"
-                                    value="outerboom-animatie-knetter">
+                                <label>
+                                    <input type="radio"name="animatie-outerboom"
+                                        value="outerboom-animation-none">
+                                    None
+                                </label>
+                                <label>
+                                    <input type="radio"name="animatie-outerboom"
+                                        value="outerboom-animation-glow">
+                                    Glow
+                                </label>
+                                <label>
+                                    <input type="radio" name="animatie-outerboom"
+                                        value="outerboom-animation-blur">
+                                    Blur
+                                </label>
+                                <label>
+                                    <input type="radio" name="animatie-outerboom"
+                                        value="outerboom-animation-spark">
+                                    Spark
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -241,7 +276,7 @@
             </div>
             <div>
                 <label>Show firework
-                    <input data-start name="firworkshow" type="radio">
+                    <input value="startshow" name="fireworkshow" type="radio">
                 </label>
             </div>
         </section>

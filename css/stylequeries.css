@@ -1,1 +1,271 @@
-/* ALLE STYLE QUERIES */
+/* MENU Settings */
+html:has([value="customize"]:checked) {
+    --start-firework: false;
+}
+
+html:has([value="startshow"]:checked) {
+    --start-firework: true;
+}
+
+/* CUSTOMIZE settings */
+html:has([value="innerring"]:checked) {
+    --customize-innering: true;
+}
+
+html:has([value="innerboom"]:checked) {
+    --customize-innerboom: true;
+}
+
+html:has([value="outerboom"]:checked) {
+    --customize-outerboom: true;
+}
+
+/* BORDER settings */
+/* Inner Ring */
+html:has([value="innerring-Border-style-solid"]:checked) {
+    --inner-ring-border-style: solid;
+}
+
+html:has([value="innerring-Border-style-dotted"]:checked) {
+    --inner-ring-border-style: dotted;
+}
+
+html:has([value="innerring-Border-style-dashed"]:checked) {
+    --inner-ring-border-style: dashed;
+}
+
+/* ANIMATION settings */
+/* Inner boom */
+html:has([value="innerboom-animation-none"]:checked) {
+    --inner-boom-animation-style: none;
+}
+
+html:has([value="innerboom-animation-glow"]:checked) {
+    --inner-boom-animation-style: glowInnerBoom;
+}
+
+html:has([value="innerboom-animation-blur"]:checked) {
+    --inner-boom-animation-style: blur;
+}
+
+html:has([value="innerboom-animation-spark"]:checked) {
+    --inner-boom-animation-style: sparkInnerBoom;
+}
+
+
+/* Outer boom */
+html:has([value="outerboom-animation-none"]:checked) {
+    --outer-boom-animation-style: none;
+}
+
+html:has([value="outerboom-animation-glow"]:checked) {
+    --outer-boom-animation-style: glowOuterBoom;
+}
+
+html:has([value="outerboom-animation-blur"]:checked) {
+    --outer-boom-animation-style: blur;
+}
+
+html:has([value="outerboom-animation-spark"]:checked) {
+    --outer-boom-animation-style: sparkOuterBoom;
+}
+
+
+/* COLOR settings */
+/* Inner Ring Color */
+html:has([value="hotpink-innerring"]:checked) {
+    --inner-ring-color: hotpink;
+}
+
+html:has([value="rebeccapurple-innerring"]:checked) {
+    --inner-ring-color: rebeccapurple;
+}
+
+html:has([value="dodgerblue-innerring"]:checked) {
+    --inner-ring-color: dodgerblue;
+}
+
+html:has([value="orange-innerring"]:checked) {
+    --inner-ring-color: orange;
+}
+
+/* Inner Boom Color */
+html:has([value="hotpink-innerboom"]:checked) {
+    --inner-boom-color: hotpink;
+}
+
+html:has([value="rebeccapurple-innerboom"]:checked) {
+    --inner-boom-color: rebeccapurple;
+}
+
+html:has([value="dodgerblue-innerboom"]:checked) {
+    --inner-boom-color: dodgerblue;
+}
+
+html:has([value="orange-innerboom"]:checked) {
+    --inner-boom-color: orange;
+}
+
+/* Outer Boom Color */
+html:has([value="hotpink-outerboom"]:checked) {
+    --outer-boom-color: hotpink;
+}
+
+html:has([value="rebeccapurple-outerboom"]:checked) {
+    --outer-boom-color: rebeccapurple;
+}
+
+html:has([value="dodgerblue-outerboom"]:checked) {
+    --outer-boom-color: dodgerblue;
+}
+
+html:has([value="orange-outerboom"]:checked) {
+    --outer-boom-color: orange;
+}
+
+/* Container Styles */
+@container style(--start-firework: false) {
+    main article:first-of-type {
+        width: 50vmin;
+        aspect-ratio: 1;
+        margin: 0.5em;
+    }
+
+    main {
+        position: absolute;
+        top: 0;
+        height: calc(100vh - var(--height-footer));
+        transition: all 0.5s ease-in-out;
+    }
+
+    footer {
+        transform: translateY(0);
+    }
+
+    header {
+        transform: translateY(-100%);
+    }
+
+    /* Pause Animations */
+    main article:first-of-type::after,
+    main article:first-of-type section:nth-of-type(1) div::before,
+    main article:first-of-type section:nth-of-type(2) div::before,
+    main article:first-of-type section:nth-of-type(3) div::before,
+    main article:first-of-type section:nth-of-type(3) div::after {
+        animation: none;
+    }
+
+}
+
+@container style(--start-firework: true) {
+    main {
+        height: calc(100vh - var(--height-header));
+        width: auto;
+    }
+
+    /* Inner Ring and Boom */
+    main section:nth-of-type(1) div::before {
+        border: var(--inner-ring-border-width) var(--inner-ring-border-style) var(--inner-ring-color);
+    }
+
+    main section:nth-of-type(2) div::before {
+        background: var(--inner-boom-color);
+        animation: var(--inner-boom-animation-style) var(--animation-dur) infinite,
+        explosionInnerBoom var(--animation-dur) cubic-bezier(.13, .7, .42, 1.01) infinite;
+    }
+
+    /* Outer Boom */
+    main section:nth-of-type(3) div::before {
+        background: var(--outer-boom-color);
+        animation: var(--outer-boom-animation-style) var(--animation-dur) infinite,
+        explosionOuterBoom var(--animation-dur) cubic-bezier(.13, .7, .42, 1.01) infinite;
+    }
+
+    /* Shared Styles for Boom */
+    main section:nth-of-type(2) div,
+    main section:nth-of-type(3) div {
+        padding: var(--padding-input-buttons);
+        border: none;
+    }
+
+    /* Background Color for Inner Ring and Boom */
+    fieldset[data-innerring]>div:first-of-type div:first-of-type div,
+    fieldset[data-innerboom]>div div:first-of-type div {
+        background-color: var(--inner-ring-color);
+    }
+
+    /* Background Color for Outer Boom */
+    fieldset[data-outerboom]>div div:first-of-type div {
+        background-color: var(--outer-boom-color);
+    }
+}
+
+/* Container Styles Based on Customization */
+@container style(--start-firework: false) and style(--customize-innering: true) {
+
+    div[data-customizemenu] section:first-of-type label:first-of-type {
+        background-color: var(--golden-color);
+        box-shadow: var(--box-shadow);
+    }
+
+    main section:nth-of-type(1) div {
+        border: var(--inner-ring-border-width) var(--inner-ring-border-style) var(--inner-ring-color);
+        width: var(--inner-ring-width);
+        height: var(--inner-ring-width);
+        box-shadow: var(--box-shadow);
+    }
+
+    main article:first-of-type section:not(:nth-of-type(1)) div {
+        background: var(--color-trail);
+    }
+
+    footer div[data-customizeMenu] fieldset[data-innerring] {
+        display: flex;
+        gap: 1em;
+    }
+}
+
+@container style(--start-firework: false) and style(--customize-innerboom: true) {
+    div[data-customizemenu] section label:nth-of-type(2) {
+        background-color: var(--golden-color);
+        box-shadow: var(--box-shadow);
+    }
+
+    main section:nth-of-type(2) div {
+        background-color: var(--inner-boom-color);
+        box-shadow: var(--box-shadow);
+        animation: var(--inner-boom-animation-style) var(--animation-dur) infinite;
+    }
+
+    main article:first-of-type section:not(:nth-of-type(2)) div {
+        background: var(--color-trail);
+    }
+
+    footer div[data-customizeMenu] fieldset[data-innerboom] {
+        display: flex;
+        gap: 1em;
+    }
+}
+
+@container style(--start-firework: false) and style(--customize-outerboom: true) {
+    div[data-customizemenu] section label:nth-of-type(3) {
+        background-color: var(--golden-color);
+        box-shadow: var(--box-shadow);
+    }
+
+    main section:nth-of-type(3) div {
+        background-color: var(--outer-boom-color);
+        box-shadow: var(--box-shadow);
+        animation: var(--outer-boom-animation-style) var(--animation-dur) infinite;
+    }
+
+    main article:first-of-type section:not(:nth-of-type(3)) div {
+        background: var(--color-trail);
+    }
+
+    footer div[data-customizeMenu] fieldset[data-outerboom] {
+        display: flex;
+        gap: 1em;
+    }
+}
+
